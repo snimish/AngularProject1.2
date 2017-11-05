@@ -3,7 +3,7 @@ import {TaskModel} from '../model/task.model';
 
 @Injectable()
 export class TaskService {
-  private taskList: TaskModel[];
+  private taskList: TaskModel[] = new Array();
   constructor() { 
   }
 

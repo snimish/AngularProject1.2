@@ -18,6 +18,7 @@ export class AddTaskComponent implements OnInit {
   }
 
   private addTask():void{
+    console.log(JSON.stringify(this.task));
     this.taskService.addTask(this.task);
     this.task = new TaskModel();
   }
