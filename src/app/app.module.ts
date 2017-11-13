@@ -7,12 +7,14 @@ import { TaskListComponent } from './components/task-list/task-list.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { TaskService } from 'app/services/task.service';
 import { TaskModel } from 'app/model/task.model';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

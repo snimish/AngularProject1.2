@@ -1,6 +1,6 @@
 
 <div class="container">
-  <form >
+  <form #f="ngForm" novalidate autocomplete="off">
     <div class="form-group">
       <input type="text" name="title" class="form-control" placeholder="Title" [(ngModel)]="task.title" required >
     </div>
@@ -11,7 +11,7 @@
       <input type="date" name="compDate" class="form-control" placeholder="Completion Date" [(ngModel)]="task.completionDate" required>
     </div>
     <div class="form-group">
-      <button name="submit" class="btn btn-primary" (click)="addTask()">Submit values</button>
+      <button name="submit" class="btn btn-primary" (click)="addTask()">Submit Task</button>
     </div>
   </form>
 </div>

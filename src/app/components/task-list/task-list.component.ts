@@ -12,10 +12,13 @@ export class TaskListComponent implements OnInit {
 
   private tasks: TaskModel[];
   constructor(private taskService: TaskService) { 
-    this.tasks = taskService.getTasks();
+    this.tasks = this.taskService.getTasks();
   }
 
   ngOnInit() {
   }
 
+  getTasks():TaskModel[]{
+    return this.taskService.getTasks();
+  }
 }

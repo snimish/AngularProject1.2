@@ -1,14 +1,22 @@
 
-<div class="container" *ngIf="false else notasks" >
-  <p>
-    task-list works!
-  </p>
+<div class="container" *ngIf="taskService.hasTasks(); else notasks" >
   <table class="table">
     <tr>
       <th>Title</th>
+      <th>Description</th>
+      <th>Completion Date</th>
+    </tr>
+    <tr *ngFor="let v of taskService.getTasks()" appHighlight>
+      <td>{{v.title}}</td>
+      <td *ngIf="v.description">{{v.description}}</td>
+      <td>{{v.completionDate}}</td>
     </tr>
   </table>
 </div>
 <ng-template #notasks>
   <h1>Hurray! No task Available</h1>
+</ng-template>
+
+<ng-template #empty>
+  <td>N/A</td>
 </ng-template>

@@ -3,8 +3,9 @@ import {TaskModel} from '../model/task.model';
 
 @Injectable()
 export class TaskService {
-  private taskList: TaskModel[] = new Array();
+  private taskList: TaskModel[];
   constructor() { 
+    this.taskList = new Array();
   }
 
   public getTasks(): TaskModel[]{
@@ -13,5 +14,9 @@ export class TaskService {
 
   public addTask(task:TaskModel):void{
     this.taskList.push(task);
+  }
+
+  public hasTasks():boolean{
+    return (this.taskList.length>0?true:false);
   }
 }
